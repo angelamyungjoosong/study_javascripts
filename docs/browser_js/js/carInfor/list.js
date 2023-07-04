@@ -32,3 +32,9 @@ let list_source = document.querySelector(`#list`);
 
 //html로 포문 내용 만들기 -> 원하는 곳 설정 -> innerHTML로 이동시키기 
 list_source.innerHTML = outHtml;
+
+//가져와서 바꿔채기해서 다시 보내
+
+
+// html 중 아이디 부분 (내용과 function)을 담아class화./ 그냥 리턴 되는건 string인데, document.querySelector사용하면 클래스로 리턴 
+// list_source의 변수 innerHTML(지정된 변수의 이름)에 안에 들어간 값 / outHtml로 넣어주는 값을 바꾼다 
