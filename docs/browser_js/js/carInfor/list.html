@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .header {
+      background-color: black;
+      color: white;
+      padding: 20px;
+    }
+
+    .footer {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .search {
+      padding: 20px;
+    }
+
+    .table-container {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          Logo
+        </div>
+        <div class="col">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="search">
+    <div class="container">
+      <h2>Search</h2>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search term" aria-label="Search term" aria-describedby="search-button">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="search-button">Go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <div class="container">
+      <h2>Table</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Car Name</th>
+            <th>ID</th>
+            <th>Manufacturer</th>
+          </tr>
+        </thead>
+        <tbody id="list">
+            <tr>
+                <td>Toyota Camry</td>
+                <td>123456</td>
+                <td>Toyota</td>
+              </tr>
+              <tr>
+                <td>Honda Civic</td>
+                <td>789012</td>
+                <td>Honda</td>
+              </tr>
+              <tr>
+                <td>BMW X5</td>
+                <td>3456787</td>
+                <td>BMW</td>
+              </tr>
+              <tr>
+                <td>Ford Mustang</td>
+                <td>901234</td>
+                <td>Ford</td>
+              </tr>
+              <tr>
+                <td>Chevrolet Camaro</td>
+                <td>567890</td>
+                <td>Chevrolet</td>
+              </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-secondary">Previous</button>
+          <button class="btn btn-primary">1</button>
+          <button class="btn btn-primary">2</button>
+          <button class="btn btn-primary">3</button>
+          <button class="btn btn-secondary">Next</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+ 
+
+  <script src="list.js"></script> 
