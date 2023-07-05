@@ -25,4 +25,16 @@ function tablelist(){
       return outHtml;
     }
 
-tablelist();
+// tablelist();
+
+// add keydown event  //id로 찍은 input을 전부 가져왔다는 얘기 
+let keydownObject = document.querySelector("#keydownEnter");
+ //keydown / click 
+keydownObject.addEventListener('keydown', (event) => {
+    if (event.code == 'Enter'){
+        console.log(`key down : ${event.code}`);
+  
+        tablelist();
+    }
+   
+});
