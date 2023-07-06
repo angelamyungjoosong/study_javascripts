@@ -21,7 +21,9 @@
 //네트웍에서 날아온 스트링이 json으로 바뀐게 return 됨(fuction)
 // jason으로 받은 걸 data로 받고 그 data를 출력하면 json이 나옴.
 
-function fetchDatgokr(){
+
+// 정보 데이터 포털 : 대구 의료기 판매 
+function fetchDatagokr(){
 let url = 'https://apis.data.go.kr/3450000/medicalDevSalesPlasService/getMedicalDevSalesPlas?serviceKey=v9nQhJoXl4wY6sr2aLQYKMdNKR0lxjG7kl1dC%2FJrqcuVLuUBk7f3AkJEMJI9yKry0NP%2FlEqJFSJcQ9K8LkOsiA%3D%3D&currentPage=1&perPage=10&SN=1'; 
 let request = fetch(url)
     .then((response) => {
@@ -37,3 +39,68 @@ let request = fetch(url)
 
 // 파라미터 => 문법
 // 실행되는내용이 하나면 이렇게 쓸 수 있다 (function) 
+// 로컬 호스트와 127.0.0.1:8080는 같다 
+// 포스트맨 역할 
+
+//자동차 정보 상세 
+function fetchCarInforDetail(){
+    let url = 'http://127.0.0.1:8080/selectDetail/CI002'; 
+    let request = fetch(url)
+        
+    .then((response) => {
+            return response.json();
+        }) //이것도 function.response대신 다른 이름도 가능. 
+        //스트링으로 일렬로 날아오기 때문에 값 value 값 value로 들어오는 json으로 받아야함. 
+        
+        .then((data) => {
+            console.log(data);
+        })
+        
+        .catch(errorMeg => {
+            console.log(errorMeg);
+        });
+    }
+
+    // 자동차 정보 수정
+    function fetchCarInforUpdate(){
+    // 192.168.0.57:8080/update
+    // body - 
+    // {
+    //     "CAR_NAME": "코나",
+    //     "CAR_INFOR_ID": "CAR-02"
+    // }
+    // headers - 
+    // Content-Type: application/json
+    let url = 'http://127.0.0.1:8080/update'; 
+    //postman의 Params, Authorization, Header, Body 그대로 쓰시고 hashmap(object type)으로 key,value로 넣어면 된다. 
+    let option = {
+        method : "PUT",
+        headers : {"Content-Type": "application/json"},//여기는 스트링으로 넣어야함 // header가 key 뒤에가 value 
+        body : JSON.stringify({
+            "CAR_NAME": "요주랩",
+            "CAR_INFOR_ID": "CI002"
+        }) //괄호안에 hashmap 들어가 
+    }// hash로 넣는 경우가 많음 
+    // hashmap으로 네트웍으로 보낼 수 없어서 string으로 변환 필요 JSON.stringify라는 function통해서 (네트웍에서는 string으로만 가능 )
+    
+    let request = fetch(url, option)
+    //option으로 내용을 바꿔야할때 사용. 
+        
+    .then((response) => {
+            return response.json();
+        }) //이것도 function.response대신 다른 이름도 가능. 
+        //스트링으로 일렬로 날아오기 때문에 값 value 값 value로 들어오는 json으로 받아야함. 
+        
+        .then((data) => {
+            console.log(data);
+        })
+        
+        .catch(errorMeg => {
+            console.log(errorMeg);
+        });
+    }
+
+
+    //포스트멘에 먼저넣어보고 확인 후 포스트멘 역할을 js에 만들기 
+    //5500에서 보내고 8080으로 받아. 5500에서 8080으로 받아.  정체규정에 어긋나서 해킹이라고 여김. 
+    //WebMvcConfig
